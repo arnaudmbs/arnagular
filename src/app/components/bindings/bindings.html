@@ -1,0 +1,51 @@
+<h2>{{title}}</h2>
+<div>
+    <h3>1. Interpolation</h3>
+    <p>Bonjour {{user.firstname}} {{user.lastname}}</p>
+    <p>2 + 3 = {{2+3}}</p>
+</div>
+
+<div>
+    <h3>2. Property Binding</h3>
+    <img [src]="imageUrl" width="40px" alt="logo">
+    <button [disabled]="isButtonDisabled">Bouton</button>
+
+</div>
+
+<div>
+    <h3>3. Attribute Binding</h3>
+    <table border="1">
+        <tr>
+            <td [attr.colspan]="colspanValue">
+                Cellule Fusionnées sur {{colspanValue}} colonnes
+            </td>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td>B</td>
+        </tr>
+    </table>
+</div>
+
+<div>
+    <h3>4. Class Binding</h3>
+    <p [class.active]="isActive">Ce texte est actif : {{isActive}}</p>
+</div>
+
+<div>
+    <h3>5. Style Binding</h3>
+    <p [style.color]="textColor" [style.font-size.px]="fontSize">Texte stylisé dynamiquement (à partir de variable)</p>
+</div>
+
+<div>
+    <h3>6. Event Binding</h3>
+    <button (click)="incrementCounter()" [disabled]="isButtonDisabled">Cliquez-moi !</button>
+    <button (click)="toggleButton()">{{isButtonDisabled?"Activer":"Désactiver"}} les boutons ci-dessus</button>
+    <p>Nombre de click : {{clickCount}}</p>
+</div>
+
+<div>
+    <h3>7. Two-way Binding</h3>
+    <input [(ngModel)]="userName" type="text" placeholder="Votre nom">
+    <p>Synchronisé : {{userName}}</p>
+</div>

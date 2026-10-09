@@ -1,0 +1,42 @@
+<mat-stepper aria-label="Horizontal stepper" linear #stepper>
+  <mat-step [stepControl]="form1" label="Compte">
+    <form [formGroup]="form1">
+        <mat-form-field appearance="outline">
+            <mat-label>Nom d'utilisateur</mat-label>
+            <input matInput formControlName="username" placeholder="Entrez votre nom d'utilisateur">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+        <mat-label>Mot de passe</mat-label>
+            <input matInput formControlName="password" placeholder="Saisissez votre mot de passe">
+        </mat-form-field>
+        <div>
+            <button matButton matStepperNext>Next</button>
+        </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="form2" label="Informations">
+    <form [formGroup]="form2">
+      <!-- <mat-form-field>
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+               required>
+      </mat-form-field>
+      <div>
+        <button matButton matStepperPrevious>Back</button>
+        <button matButton matStepperNext>Next</button>
+      </div> -->
+        <div>
+            <button matButton matStepperPrevious>Back</button>
+            <button matButton matStepperNext>Next</button>
+        </div>
+    </form>
+  </mat-step>
+  <mat-step label="Confirmation">
+    <ng-template matStepLabel>Confirmation</ng-template>
+    <!-- <p>You are now done.</p>
+    <div>
+      <button matButton matStepperPrevious>Back</button>
+      <button matButton (click)="stepper.reset()">Reset</button>
+    </div> -->
+  </mat-step>
+</mat-stepper>

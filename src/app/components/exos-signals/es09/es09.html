@@ -1,0 +1,13 @@
+<div>
+    <h3>Exercice 9 — Panier minimal</h3>
+    <p>
+        Quantité : {{ quantite() }}
+        <button (click)="decrementer()" [disabled]="quantite() === 0">-</button>
+        <button (click)="incrementer()">+</button>
+        Prix unitaire :
+        <input [(ngModel)]="prixUnitaire" type="number">
+    </p>
+    <p>Sous-total : {{sousTotal() | currency:'EUR'}}</p>
+    <p>TVA : {{ tva() | currency:'EUR' }}</p>
+    <p>Total TTC : {{ totalTTC() | currency:'EUR' }}</p>
+</div>

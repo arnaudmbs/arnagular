@@ -1,0 +1,14 @@
+<div>
+    <h3>Exercice 7 — Computed chaîné</h3>
+
+    <p>
+        Température en Celsius : 
+        <input [(ngModel)]="temperatureCelsius" type="number">
+    </p>
+    <p>
+        Température en Fahrenheit : {{temperatureFahrenheit().toFixed(0)}}
+    </p>
+    <p>
+        {{description()}}
+    </p>
+</div>

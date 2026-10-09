@@ -1,0 +1,43 @@
+<h2>Exercices Input/Output</h2>
+
+<select [(ngModel)]="selectedSousComponant">
+    @for (scItem of sousComposants; track $index) {
+        <option>{{scItem}}</option>
+    }
+</select>
+
+@switch(selectedSousComponant) {
+    @case ("eio01") {
+        <app-eio01></app-eio01>
+    }
+    @case ("eio02") {
+        <app-eio02></app-eio02>
+    }
+    @case ("eio03") {
+        <app-eio03></app-eio03>
+    }
+    @case ("eio04") {
+        <app-eio04></app-eio04>
+    }
+    @case ("eio05") {
+        <app-eio05></app-eio05>
+    }
+    @case ("eio06") {
+        <app-eio06></app-eio06>
+    }
+    @case ("eio07") {
+        <app-eio07></app-eio07>
+    }
+    @case ("eio08") {
+        <app-eio08></app-eio08>
+    }
+    @case ("eio09") {
+        <app-eio09></app-eio09>
+    }
+    @case ("eio10") {
+        <app-eio10></app-eio10>
+    }
+    @default {
+        <p>Aucun composant sélectionné</p>
+    }
+}

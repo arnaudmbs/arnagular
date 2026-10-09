@@ -1,0 +1,14 @@
+<div>
+    <h3>Exercice 6 — Liste de tâches (Todo)</h3>
+
+    <input [(ngModel)]="tache">
+    <button (click)="ajouterTache()">Ajouter</button>
+    <p>Nombre de tâches : {{nombreTaches()}}</p>
+    <ul>
+        @for (tacheItem of taches(); track $index) {
+            <li>{{tacheItem}}</li>
+        } @empty {
+            Aucune tâche
+        }
+    </ul>
+</div>

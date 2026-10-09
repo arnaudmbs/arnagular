@@ -1,0 +1,16 @@
+<div>
+    <h3>Exercice 10 — Filtre de liste</h3>
+    <P>
+        Critère de recherche :
+        <input [(ngModel)]="recherche">
+    </P>
+    @if (produitsFiltres().length>0) {
+        <ul>
+        @for (produitItem of produitsFiltres(); track $index) {
+            <li>{{produitItem}}</li>
+        }
+        </ul>
+    } @else {
+        Aucun produit trouvé.
+    }
+</div>

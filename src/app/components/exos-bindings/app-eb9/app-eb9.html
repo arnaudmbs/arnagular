@@ -1,0 +1,27 @@
+<div>
+    <h3>Exercice 9 — &#64;switch</h3>
+    <p>
+        Rôle :
+        <select [(ngModel)]="selectRole">
+        @for (r of roles; track $index) {
+            <option>{{r}}</option>
+        }
+        </select>
+    </p>
+    <div>
+    @switch (selectRole) {
+        @case ("admin") {
+            <p class="carte admin">Accès total</p>
+        }
+        @case ("user") {
+            <p class="carte user">Accès limité</p>
+        }
+        @case ("guest") {
+            <p class="carte guest">Lecture seule</p>
+        }
+        @default {
+            <p class="carte defaut">Rôle inconnu</p>
+        }
+    }    
+    </div>
+</div>

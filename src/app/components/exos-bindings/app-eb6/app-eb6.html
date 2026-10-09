@@ -1,0 +1,10 @@
+<div>
+    <h3>Exercice 6 — Two-way binding avec [(ngModel)]</h3>
+    <input [(ngModel)]="nom" name="nom">
+    <input type="number" [(ngModel)]="age" name="age">
+    <input type="checkbox" [(ngModel)]="accepte" name="accepte">
+    <p>Nom : {{nom}}</p>
+    <p>Age : {{age}} ans</p>
+    <p>Accepte : {{accepte?"Oui":"Non"}}</p>
+    <button (click)="reset()">Reset</button>
+</div>

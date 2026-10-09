@@ -1,0 +1,8 @@
+<div>
+    <h3>Exercice 2 — Property binding</h3>
+    <a [href]="lien"><img [src]="imageUrl"></a>
+</div>
+<div>
+    <button [disabled]="desactive">Bouton {{desactive?"désactivé":"activé"}}</button>
+    <button (click)="toggleButton()">{{desactive?"Activer":"Désactiver"}} le bouton</button>
+</div>

@@ -1,0 +1,17 @@
+<div>
+    <h3>Exercice 8 — &#64;for avec track et &#64;empty</h3>
+    <input [(ngModel)]="nouvelle">
+    <button (click)="ajouter()">Ajouter</button>
+
+    <ul>
+        @for(t of taches ; track t.id ; let i = $index, e = $even) {
+            <li [class.pair]="!e">
+                {{i+1}}. {{t.libelle}}
+                <button (click)="supprimer(t.id)">Supprimer</button>
+            </li>
+        } @empty {
+            <li>Aucune tache.</li>
+        }
+    </ul>
+
+</div>

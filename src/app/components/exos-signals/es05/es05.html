@@ -1,0 +1,31 @@
+<div>
+    <h3>Exercice 5 — Computed : Moyenne scolaire</h3>
+    <p>
+        Math :
+        <input [(ngModel)]="noteMath" type="number">
+    </p>
+    <p>
+        Français :
+        <input [(ngModel)]="noteFrancais" type="number">
+    </p>
+    <p>
+        Histoire :
+        <input [(ngModel)]="noteHistoire" type="number">
+    </p>
+    <p>
+        Moyenne : {{moyenne().toFixed(2)}} / 20
+    </p>
+    <p>Mention : 
+    @if (moyenne() < 8) {
+        Insuffisant ❌
+    } @else if (moyenne() < 10) {
+        Passable 😐
+    } @else if (moyenne() < 12) {
+        Assez bien 🙂
+    } @else if (moyenne() < 14) {
+        Bien 👍
+    } @else {
+        Très bien ⭐
+    }
+    </p>
+</div>

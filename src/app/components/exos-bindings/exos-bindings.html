@@ -1,0 +1,46 @@
+<h2>Exercices Bindings</h2>
+
+<select [(ngModel)]="selectedSousComponant">
+    @for (scItem of sousComposants; track $index) {
+        <option>{{scItem}}</option>
+    }
+</select>
+
+{{selectedSousComponant}}
+
+
+@switch(selectedSousComponant) {
+    @case ("app-app-eb1") {
+        <app-app-eb1></app-app-eb1>
+    }
+    @case ("app-app-eb2") {
+        <app-app-eb2></app-app-eb2>
+    }
+    @case ("app-app-eb3") {
+        <app-app-eb3></app-app-eb3>
+    }
+    @case ("app-app-eb4") {
+        <app-app-eb4></app-app-eb4>
+    }
+    @case ("app-app-eb5") {
+        <app-app-eb5></app-app-eb5>
+    }
+    @case ("app-app-eb6") {
+        <app-app-eb6></app-app-eb6>
+    }
+    @case ("app-app-eb7") {
+        <app-app-eb7></app-app-eb7>
+    }
+    @case ("app-app-eb8") {
+        <app-app-eb8></app-app-eb8>
+    }
+    @case ("app-app-eb9") {
+        <app-app-eb9></app-app-eb9>
+    }
+    @case ("app-app-eb10") {
+        <app-app-eb10></app-app-eb10>
+    }
+    @default {
+        <p>Aucun composant sélectionné</p>
+    }
+}

@@ -1,0 +1,6 @@
+<div>
+    <p><b>{{produit().nom}}</b></p>
+    <p><b>Prix : </b>{{produit().prix | currency:'EUR'}}</p>
+    <p><b>Stock : </b>{{produit().stock}}</p>
+    <button (click)="ajouterAuPanier(produit())" [disabled]="produit().stock === 0">Ajouter au panier</button>
+</div>

@@ -1,0 +1,17 @@
+<div>
+    <h3>Exercice 7 — &#64;if / &#64;else if / &#64;else</h3>
+    <p>Température :
+        <input type="number" [(ngModel)]="temperature"> °C
+    </p>
+    @if (temperature < 0) {
+        <p class="bleu">Il gèle</p>
+    } @else if (temperature >= 0 && temperature <=14) {
+        <p>Il fait frais.</p>
+    } @else if (temperature >= 15 && temperature <=25) {
+        <p>Temperature agréable.</p>
+    } @else if (temperature >= 26 && temperature <=34) {
+        <p>Il fait chaud.</p>
+    } @else if (temperature >=35) {
+        <p class="rouge">Canicule !</p>
+    }
+</div>

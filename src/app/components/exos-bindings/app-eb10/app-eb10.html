@@ -1,0 +1,44 @@
+<div>
+    <h3>Exercice 10 — Combinaison complete : panier filtrable</h3>
+    <div class="filtres">
+        <button [class.actif]="filtre==='tous'" (click)="setFiltre('tous')">Tous</button>
+        <button [class.actif]="filtre==='fruit'" (click)="setFiltre('fruit')">Fruits</button>
+        <button [class.actif]="filtre==='legume'" (click)="setFiltre('legume')">Légumes</button>
+        <button [class.actif]="filtre==='boisson'" (click)="setFiltre('boisson')">Boisson</button>
+    </div>
+    <div>
+        <input type="checkbox" [(ngModel)]="cacherRupture" id="cacherRupture" name="cacherRupture">
+        <label for="cacherRupture">Cacher les articles en rupture de stock</label>
+    </div>
+    <div class="grille">
+        @for (articleItem of articlesFiltres; track articleItem.id) {
+            <article class="carte" [style.opacity]="articleItem.stock === 0?0.4:1">
+                <h4>{{articleItem.nom}}</h4>
+                @switch (articleItem.categorie) {
+                    @case ("fruit") {
+                        <p class="badge {{articleItem.categorie}}">Fruit</p>
+                    }
+                    @case ("legume") {
+                        <p class="badge {{articleItem.categorie}}">Légume</p>
+                    }
+                    @case ("boisson") {
+                        <p class="badge {{articleItem.categorie}}">Boisson</p>
+                    }
+                    @default {
+                        <p></p>
+                    }
+                }
+                <p>Prix : {{articleItem.prix}}</p>
+                @if (articleItem.stock > 0) {
+                    <p>Stock : {{articleItem.stock}}</p>
+                } @else {
+                    <p class="rupture">En rupture de stock</p>
+                }
+                <button [disabled]="articleItem.stock === 0" (click)="acheter(articleItem)">Acheter</button>
+            </article>
+        } @empty {
+            <article class="carte">Aucun article.</article>
+        }
+    </div>
+    <div class="recap">Articles affichés : {{articlesFiltres.length}} / Total : {{articles.length}}</div>
+</div>

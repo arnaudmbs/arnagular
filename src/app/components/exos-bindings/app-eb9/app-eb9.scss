@@ -1,0 +1,12 @@
+.carte {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.8rem;
+  background: #fafafa;
+  color: white;
+}
+
+.carte.admin { background: red; }
+.carte.user  { background: blue; }
+.carte.guest { background: gray; }
+.carte.defaut { background: black; }

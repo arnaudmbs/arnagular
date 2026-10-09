@@ -1,0 +1,75 @@
+<div>
+
+    <h2>Ajouter un produit</h2>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="auth-form">
+        @let nameFC = form.get('name');
+        @let descriptionFC = form.get('description');
+        @let prixFC = form.get('price');
+        @let stockFC = form.get('stock');
+        <mat-form-field appearance="outline">
+            <mat-label>Nom du produit</mat-label>
+            <input matInput formControlName="name" placeholder="Entrez le nom ici">
+            @if(nameFC?.hasError('required')){
+                <mat-error>Le nom du produit est obligatoire !</mat-error>
+            } @else if (nameFC?.hasError('minlength')) {
+                <mat-error>
+                    Nom de {{nameFC?.getError('minlength').requiredLength}} caractères minimum.
+                    Actuellement {{nameFC?.getError('minlength').actualLength}} caractères.
+                </mat-error>
+            }
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <input matInput formControlName="description" placeholder="Ex: Parck d'outils...">
+            @if(descriptionFC?.hasError('required')){
+                <mat-error>La description du produit est obligatoire !</mat-error>
+            } @else if (descriptionFC?.hasError('minlength')) {
+                <mat-error>
+                    Nom de {{descriptionFC?.getError('minlength').requiredLength}} caractères minimum.
+                    Actuellement {{descriptionFC?.getError('minlength').actualLength}} caractères.
+                </mat-error>
+            } @else if (descriptionFC?.hasError('maxlength')) {
+                <mat-error>
+                    Nom de {{descriptionFC?.getError('maxlength').requiredLength}} caractères maximum.
+                    Actuellement {{descriptionFC?.getError('maxlength').actualLength}} caractères.
+                </mat-error>
+            }
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Prix</mat-label>
+            <input matInput formControlName="price" class="price-right-align" type="number" step="0.01" min="0">
+            @if(prixFC?.hasError('required')){
+                <mat-error>Le prix du produit est obligatoire !</mat-error>
+            } @else if (prixFC?.hasError('min')) {
+                <mat-error>
+                    Le prix doit être positif !
+                </mat-error>
+            }
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Catégorie</mat-label>
+            <mat-select formControlName="category">
+                @for(cat of productService.getProductsCategories(); track $index) {
+                    <mat-option value="cat">{{cat}}</mat-option>
+                }
+                <mat-option>1</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Stock</mat-label>
+            <mat-icon matPrefix>store_mall_directory</mat-icon>
+            <input matInput formControlName="stock" class="price-right-align" type="number" min="0">
+            @if(stockFC?.hasError('required')){
+                <mat-error>Le stock est obligatoire !</mat-error>
+            } @else if (stockFC?.hasError('min')) {
+                <mat-error>
+                    Le stock doit être positif !
+                </mat-error>
+            }
+        </mat-form-field>
+
+        <button mat-stroked-button type="submit">Enregistrer</button>
+    </form>
+
+</div>

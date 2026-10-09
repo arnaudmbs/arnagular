@@ -1,0 +1,11 @@
+<div>
+    <h3>Exercice 8 — Effect : historique des valeurs</h3>
+
+    <input [(ngModel)]="mot">
+    <p></p>
+    <ul>
+        @for (mot of historique; track $index) {
+            <li>{{mot}}</li>
+        }
+    </ul>
+</div>

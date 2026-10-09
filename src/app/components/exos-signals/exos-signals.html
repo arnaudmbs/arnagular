@@ -1,0 +1,9 @@
+<h2>Exercices Signals</h2>
+
+<select [(ngModel)]="selectedSousComponant" (change)="goToExercice()">
+    @for (scItem of sousComposants; track $index) {
+        <option>{{scItem}}</option>
+    }
+</select>
+
+<router-outlet/>

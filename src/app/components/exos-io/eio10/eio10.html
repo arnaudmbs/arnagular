@@ -1,0 +1,14 @@
+<div>
+    <h3>Exercice 10 — Combinaison complete : boutique interactive</h3>
+    <div class="grille">
+    @for (produit of produits; track $index) {
+        <app-eio10-enfant [produit]="produit" (ajouteAuPanier)="onProduitAjouteAuPanier($event)"/>
+    }
+    </div>
+    <div>
+        <b>Nombre d'articles dans le panier : {{panier().length}}</b>
+    </div>
+    <div>
+        <b>Total : {{totalPanier() | currency:'EUR'}}</b>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div>
+    <h3>
+        Exercice 3 — Class binding
+    </h3>
+</div>
+
+<div [class.actif]="actif" [class]="theme">
+    <button (click)="toggleActif()">Toggle actif : {{actif?"activé":"désactivé"}}</button>
+    <button (click)="invertTheme()">Inverser thème : {{theme}}</button>
+</div>

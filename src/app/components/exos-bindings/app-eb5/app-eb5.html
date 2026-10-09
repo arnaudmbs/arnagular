@@ -1,0 +1,9 @@
+<div>
+    <h3>Exercice 5 — Event binding</h3>
+    <button (click)="incrementer()">Incrémenter</button>
+    <button (click)="reset()">Reset</button>
+
+    <div class="zone" (mousemove)="onMove($event)" (mouseleave)="onLeave()">
+        <p>Compteur : {{compteur}} / Position : x={{dernierePosition.x}} y={{dernierePosition.y}}</p>
+    </div>
+</div>
