@@ -208,4 +208,3 @@ produits = signal(['Pomme', 'Poire', 'Fraise', 'Mangue', 'Pastèque', 'Papaye'])
 | 8 | `effect()`, effets de bord |
 | 9 | `computed()` multiples, pipes |
 | 10 | `computed()` + filtre sur tableau |
- 

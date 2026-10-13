@@ -6,6 +6,7 @@ import { TitleCasePipe } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { MatMenu, MatMenuItem, MatMenuTrigger } from '@angular/material/menu';
 import { MatButton, MatIconButton } from '@angular/material/button';
+import { AuthService } from '../../../services/auth-service';
 
 interface NavLink {
   label: string;
@@ -22,6 +23,7 @@ export class HeaderV2 {
 
   private router = inject(Router);
   private preferenceService = inject(PreferenceService);
+  protected auth = inject(AuthService);
 
   titleHeader = input.required<string>();
 
@@ -43,6 +45,11 @@ export class HeaderV2 {
   ]
 
   goToWelcome() {
+    this.router.navigate(['welcome']);
+  }
+
+  logout() {
+    this.auth.logout();
     this.router.navigate(['welcome']);
   }
 }

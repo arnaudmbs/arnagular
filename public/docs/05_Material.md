@@ -281,4 +281,3 @@ Bob Dupont     bob@example.com          [ 🗑 ]
 | 8 | `mat-stepper` (linear), `ReactiveFormsModule` |
 | 9 | `mat-autocomplete`, `mat-chip-grid` |
 | 10 | `MatDialog`, `MatSnackBar`, `mat-table`, CRUD complet |
- 

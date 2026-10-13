@@ -263,4 +263,3 @@ interface IArticle {
 | 10 | Combinaison complete |
 
 > Les corrections sont fournies dans chaque sous-dossier `ebXX-*`.
- 

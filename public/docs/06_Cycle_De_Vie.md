@@ -274,4 +274,3 @@ constructor  →  ngOnInit  →  (rendu)  →  afterNextRender / afterRenderEffe
 | Démarrage impératif ponctuel | `ngOnInit` | (toujours valable) |
 
 Maîtriser le cycle de vie en v22, c'est surtout **écrire moins de hooks** : on décrit un état **réactif** et on laisse Angular décider *quand* recalculer, charger et nettoyer.
- 

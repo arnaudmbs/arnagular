@@ -285,4 +285,3 @@ Fichiers de référence :
 - `validate()` permet les règles sur-mesure, y compris la **validation croisée** (double saisie).
 - `validateAsync()` (appuyé sur `resource()`) gère la **validation asynchrone** (ex. unicité côté serveur) ; le champ passe à l'état `pending()` pendant l'attente.
 - L'API vit dans `@angular/forms/signals` et reste **expérimentale**.
- 

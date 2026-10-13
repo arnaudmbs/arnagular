@@ -195,7 +195,7 @@ feature ──► ui ──► domain ◄── data-access
 | Cas typique | POC, formation | apps pro courantes | monorepo, DDD |
 
 ---
- 
+
 ## 5. Les briques Angular au service de l'architecture
 
 L'architecture ne tient pas qu'aux dossiers : Angular fournit des mécanismes concrets pour matérialiser les frontières.
@@ -291,4 +291,4 @@ flowchart TD
 2. **Frontières explicites** : identifiez, dans le code existant, un import qui viole le sens des dépendances et proposez une correction.
 3. **Smart vs Dumb** : prenez un composant existant qui mélange appel de service et affichage, et scindez-le en un container et un composant de présentation.
 4. **Mesure d'impact** : activez le lazy loading sur une route et observez la différence de taille du bundle initial (`ng build` + analyse).
- 
+

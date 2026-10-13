@@ -233,4 +233,3 @@ On prépare, on construit, on publie, puis on vérifie.
 Si vous retenez une seule idée, c’est celle-ci :
 
 > en Angular, on développe dans src, mais on met en ligne ce qui est généré dans dist.
- 

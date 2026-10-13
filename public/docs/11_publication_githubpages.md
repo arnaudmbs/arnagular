@@ -246,4 +246,3 @@ C’est très pratique pour :
 - un rendu de formation.
 
 > En revanche, si l’application dépend d’une API, il faudra aussi penser à publier le backend séparément.
- 

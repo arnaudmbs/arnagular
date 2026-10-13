@@ -27,6 +27,8 @@ import { ExosMat } from './components/exos-mat/exos-mat';
 import { Em08 } from './components/exos-mat/em08/em08';
 import { ProduitTableHttp } from './components/produit-table-http/produit-table-http';
 import { ProduitAddFormSignal } from './components/produit-add-form-signal/produit-add-form-signal';
+import { authGuard } from './guards/auth-guard';
+import { Login } from './components/login/login';
 
 export const routes: Routes = [
     { path: 'welcome', component: Welcome},
@@ -56,9 +58,10 @@ export const routes: Routes = [
     { path: 'votation', component: BureauVoteList},
     { path: 'exosio', component: ExosIo},
     { path: 'pipes', component: PipesExemples},
-    { path: 'produitsv2', component: ProduitTable},
+    { path: 'produitsv2', component: ProduitTable, canActivate: [authGuard]},
     { path: 'produitshttp', component: ProduitTableHttp},
     { path: 'exosmat', component: Em08},
     { path: 'signalform', component: ProduitAddFormSignal},
+    { path: 'login', component: Login},
     { path: '**', component: NotFound}
 ];
